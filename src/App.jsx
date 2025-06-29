@@ -1,7 +1,11 @@
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+
 function App() {
   return (
     <>
-      <h1>hello</h1>
+      <Home />
+      <Projects />
     </>
   );
 }
