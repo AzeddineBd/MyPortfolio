@@ -43,15 +43,17 @@ function App() {
 
     tl.from(navRef.current, { opacity: 0, y: -50, duration: 1 });
     tl.add(heroTl, "+=0.2");
-    tl.from(b_navRef.current, { opacity: 0, y: 50, duration: 1 }, "+=0.3");
+    tl.from(b_navRef.current, { opacity: 0, y: 50, duration: 1 }, "-=0.8");
   });
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <NavTop ref={navRef} />
-      <Home ref={heroRef} />
-      <Projects />
+      <main className="flex-grow flex items-center justify-center">
+        <Home ref={heroRef} />
+        {/* <Projects /> */}
+      </main>
       <NavBottom ref={b_navRef} />
-    </>
+    </div>
   );
 }
 

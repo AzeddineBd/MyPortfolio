@@ -3,10 +3,10 @@ import { forwardRef } from "react";
 
 const Home = forwardRef((props, ref) => {
   return (
-    <section className="">
+    <section className="flex-grow flex items-center justify-center">
       {/* Hero */}
-      <div ref={ref} className="flex items-center justify-center h-[80%]">
-        <div className="relative ">
+      <div ref={ref} className="w-full flex items-center justify-center">
+        <div className="relative">
           <span className="text1 absolute md:top-[-12px] md:left-24 top-[-12px] left-12 md:text-xl text-md text-gray-400">
             I AM
           </span>

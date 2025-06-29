@@ -8,7 +8,7 @@ const NavBottom = forwardRef((props, ref) => {
   return (
     <footer
       ref={ref}
-      className="flex justify-between items-center md:px-8 md:py-2 p-2"
+      className="flex justify-between items-center md:px-8 md:py-2 p-2 mt-auto"
     >
       {/* Social Media */}
       <div className="text-gray-400 text-2xl flex flex-col space-y-4">
