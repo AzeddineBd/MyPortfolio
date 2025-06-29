@@ -1,8 +1,6 @@
 const Projects = () => {
   return (
-    <div>
-      <h1>Projects Section</h1>
-    </div>
+    <section className="h-screen w-full md:px-8 md:py-2 p-2 hidden"></section>
   );
 };
 
