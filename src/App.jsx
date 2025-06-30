@@ -1,5 +1,6 @@
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
 
 // Hooks
 import { useRef } from "react";
@@ -24,6 +25,7 @@ function App() {
   const homeRef = useRef(null);
   const projectsRef = useRef(null);
   const containerRef = useRef(null);
+  const contactRef = useRef(null);
 
   // Animation GSAP
   useGSAP(() => {
@@ -41,6 +43,7 @@ function App() {
       },
     });
 
+    // Hero Animation
     heroTl.from(".text2", {
       opacity: 0,
       scale: 0,
@@ -58,6 +61,8 @@ function App() {
       "-=0.8"
     );
 
+    // Home Page Animation
+
     tl.from(navRef.current, { opacity: 0, y: -50, duration: 1 });
     tl.add(heroTl, "+=0.2");
     tl.from(b_navRef.current, { opacity: 0, y: 50, duration: 1 }, "-=0.8");
@@ -72,6 +77,19 @@ function App() {
 
     scrollTl.fromTo(
       projectsRef.current,
+      { opacity: 0, scale: 0 },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 2,
+        ease: "power2.out",
+      }
+    );
+
+    scrollTl.to(projectsRef.current, { opacity: 0, scale: 0 });
+
+    scrollTl.fromTo(
+      contactRef.current,
       { opacity: 0, scale: 0 },
       {
         opacity: 1,
@@ -98,6 +116,12 @@ function App() {
           className="absolute inset-0 opacity-0 scale-0 flex items-center justify-center"
         >
           <Projects />
+        </div>
+        <div
+          ref={contactRef}
+          className="absolute inset-0 md:top-0 top-64 scale-100 opacity-100 flex items-center justify-center"
+        >
+          <Contact />
         </div>
       </section>
       <div className="h-screen"></div>

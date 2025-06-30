@@ -58,7 +58,7 @@ const Projects = () => {
       <section className="flex flex-grow relative justify-center items-center bg-black">
         <button
           onClick={handlePrev}
-          className="absolute left-4 text-white text-4xl z-30"
+          className="absolute left-4 text-white text-6xl cursor-pointer z-30"
         >
           ‹
         </button>
@@ -89,7 +89,7 @@ const Projects = () => {
 
         <button
           onClick={handleNext}
-          className="absolute right-4 text-white text-4xl z-30"
+          className="absolute right-4 text-white text-6xl cursor-pointer z-30"
         >
           ›
         </button>
