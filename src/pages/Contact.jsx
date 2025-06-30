@@ -1,6 +1,6 @@
 const Contact = () => {
   return (
-    <section className="flex md:flex-row flex-col gap-12 items-center justify-around w-full">
+    <section className="flex md:flex-row flex-col gap-12 items-center justify-around w-full max-w-[1366px]">
       <div className="text-center flex flex-col space-y-8 w-full md:w-1/2 px-4 md:px-8">
         <div>
           <h1 className="md:text-6xl text-2xl font-bold mb-4">Contact</h1>
@@ -31,26 +31,26 @@ const Contact = () => {
           </h1>
 
           {/* Form */}
-          <div className="md:px-20 flex flex-col space-y-8 mb-12">
+          <div className="lg:px-20 flex flex-col space-y-8 mb-12">
             <input
               type="text"
               placeholder="Full Name"
-              className="md:text-xl text-md border-b-2 border-[#444] w-full py-2 outline-0"
+              className="text-md border-b-2 border-[#444] w-full py-2 outline-0"
             />
             <input
               type="number"
               placeholder="Phone Number"
-              className="md:text-xl text-md border-b-2 border-[#444] w-full py-2 outline-0"
+              className="text-md border-b-2 border-[#444] w-full py-2 outline-0"
             />
             <input
               type="email"
               placeholder="Email"
-              className="md:text-xl text-md border-b-2 border-[#444] w-full py-2 outline-0"
+              className="text-md border-b-2 border-[#444] w-full py-2 outline-0"
             />
             <input
               type="text"
               placeholder="Message"
-              className="md:text-xl text-md border-b-2 border-[#444] w-full py-2 outline-0"
+              className="text-md border-b-2 border-[#444] w-full py-2 outline-0"
             />
           </div>
           <div className="w-full text-center">

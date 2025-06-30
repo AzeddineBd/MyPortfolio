@@ -43,30 +43,6 @@ function App() {
       },
     });
 
-    // Hero Animation
-    heroTl.from(".text2", {
-      opacity: 0,
-      scale: 0,
-      duration: 1,
-      ease: "power3.out",
-    });
-    heroTl.from(
-      ".text1",
-      { opacity: 0, x: -50, duration: 1, ease: "elastic.out" },
-      "-=0.2"
-    );
-    heroTl.from(
-      ".text3",
-      { opacity: 0, x: 50, duration: 1, ease: "elastic.out" },
-      "-=0.8"
-    );
-
-    // Home Page Animation
-
-    tl.from(navRef.current, { opacity: 0, y: -50, duration: 1 });
-    tl.add(heroTl, "+=0.2");
-    tl.from(b_navRef.current, { opacity: 0, y: 50, duration: 1 }, "-=0.8");
-
     // Scroll Gsap
     scrollTl.to(homeRef.current, {
       opacity: 0,
@@ -98,6 +74,30 @@ function App() {
         ease: "power2.out",
       }
     );
+
+    // Hero Animation
+    heroTl.from(".text2", {
+      opacity: 0,
+      scale: 0,
+      duration: 1,
+      ease: "power3.out",
+    });
+    heroTl.from(
+      ".text1",
+      { opacity: 0, x: -50, duration: 1, ease: "elastic.out" },
+      "-=0.2"
+    );
+    heroTl.from(
+      ".text3",
+      { opacity: 0, x: 50, duration: 1, ease: "elastic.out" },
+      "-=0.8"
+    );
+
+    // Home Page Animation
+
+    tl.from(navRef.current, { opacity: 0, y: -50, duration: 1 });
+    tl.add(heroTl, "+=0.2");
+    tl.from(b_navRef.current, { opacity: 0, y: 50, duration: 1 }, "-=0.8");
   });
   return (
     <div className="min-h-screen">
@@ -117,14 +117,13 @@ function App() {
         >
           <Projects />
         </div>
-        <div
-          ref={contactRef}
-          className="absolute inset-0 md:top-0 top-64 scale-100 opacity-100 flex items-center justify-center"
-        >
-          <Contact />
-        </div>
       </section>
-      <div className="h-screen"></div>
+      <section
+        ref={contactRef}
+        className="min-h-screen md:pt-0 pt-94 mb-12 flex items-center justify-center"
+      >
+        <Contact />
+      </section>
       <div className="fixed bottom-0 left-0 w-full z-50">
         <NavBottom ref={b_navRef} />
       </div>
