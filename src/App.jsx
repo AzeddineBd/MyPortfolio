@@ -8,6 +8,7 @@ import { useRef } from "react";
 // Components
 import NavTop from "./components/NavTop";
 import NavBottom from "./components/NavBottom";
+import MouseLight from "./components/MouseLight";
 
 // GSAP
 import { gsap } from "gsap";
@@ -101,7 +102,8 @@ function App() {
   });
   return (
     <div className="min-h-screen">
-      <div className="fixed top-0 left-0 w-full z-50">
+      <MouseLight />
+      <div className="fixed top-0 left-0 w-full z-40">
         <NavTop ref={navRef} />
       </div>
       <section className="h-screen relative overflow-hidden" ref={containerRef}>
@@ -124,7 +126,7 @@ function App() {
       >
         <Contact />
       </section>
-      <div className="fixed bottom-0 left-0 w-full z-50">
+      <div className="fixed bottom-0 left-0 w-full z-40">
         <NavBottom ref={b_navRef} />
       </div>
     </div>

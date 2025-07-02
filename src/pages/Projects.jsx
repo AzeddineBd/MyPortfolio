@@ -55,10 +55,10 @@ const Projects = () => {
 
   return (
     <>
-      <section className="flex flex-grow relative justify-center items-center bg-black">
+      <section className="flex flex-grow relative justify-center items-center bg-[--color-bg]">
         <button
           onClick={handlePrev}
-          className="absolute left-4 text-white text-6xl cursor-pointer z-30"
+          className="absolute left-4 text-[var(--color-text)] text-6xl cursor-pointer z-30"
         >
           ‹
         </button>
@@ -78,9 +78,11 @@ const Projects = () => {
               />
 
               {index === activeIndex && (
-                <div className="text-center mt-4 text-white">
+                <div className="text-center mt-4 text-[var(--color-text)]">
                   <h2 className="text-2xl font-bold">{data.title}</h2>
-                  <p className="text-gray-300">{data.description}</p>
+                  <p className="text-[var(--color-subtext))">
+                    {data.description}
+                  </p>
                 </div>
               )}
             </div>
@@ -89,7 +91,7 @@ const Projects = () => {
 
         <button
           onClick={handleNext}
-          className="absolute right-4 text-white text-6xl cursor-pointer z-30"
+          className="absolute right-4 text-[var(--color-text)] text-6xl cursor-pointer z-30"
         >
           ›
         </button>
