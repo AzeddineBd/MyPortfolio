@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import Btn from "./Btn";
 
-const NavTop = forwardRef((props, ref) => {
+const NavTop = forwardRef(({ scrollToSection }, ref) => {
   return (
     <nav
       ref={ref}
@@ -12,12 +12,18 @@ const NavTop = forwardRef((props, ref) => {
       </h2>
       <ul className="flex space-x-8">
         <li>
-          <a href="#" className="text-[var(--color-subtext)] font-medium">
+          <a
+            onClick={() => scrollToSection("projects")}
+            className="text-[var(--color-subtext)] font-medium cursor-pointer"
+          >
             PROJECTS
           </a>
         </li>
         <li>
-          <a href="#" className="text-[var(--color-subtext)] font-medium">
+          <a
+            onClick={() => scrollToSection("contact")}
+            className="text-[var(--color-subtext)] font-medium cursor-pointer"
+          >
             CONTACT
           </a>
         </li>

@@ -14,15 +14,15 @@ import MouseLight from "./components/MouseLight";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 // GSAP Plugin
-gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 function App() {
   const navRef = useRef(null);
   const heroRef = useRef(null);
-  const b_navRef = useRef(null);
+  const bottomNavRef = useRef(null);
   const homeRef = useRef(null);
   const projectsRef = useRef(null);
   const containerRef = useRef(null);
@@ -98,13 +98,33 @@ function App() {
 
     tl.from(navRef.current, { opacity: 0, y: -50, duration: 1 });
     tl.add(heroTl, "+=0.2");
-    tl.from(b_navRef.current, { opacity: 0, y: 50, duration: 1 }, "-=0.8");
+    tl.from(bottomNavRef.current, { opacity: 0, y: 50, duration: 1 }, "-=0.8");
   });
   return (
     <div className="min-h-screen">
       <MouseLight />
       <div className="fixed top-0 left-0 w-full z-40">
-        <NavTop ref={navRef} />
+        <NavTop
+          ref={navRef}
+          scrollToSection={(sectionName) => {
+            if (sectionName === "projects") {
+              // تمرير إلى منتصف ScrollTrigger الذي يحتوي projects
+              gsap.to(window, {
+                duration: 1.2,
+                scrollTo: {
+                  y: containerRef.current.offsetTop + window.innerHeight * 0.6,
+                },
+                ease: "power2.inOut",
+              });
+            } else if (sectionName === "contact") {
+              gsap.to(window, {
+                duration: 1.2,
+                scrollTo: { y: contactRef.current.offsetTop },
+                ease: "power2.inOut",
+              });
+            }
+          }}
+        />
       </div>
       <section className="h-screen relative overflow-hidden" ref={containerRef}>
         <div
@@ -127,7 +147,7 @@ function App() {
         <Contact />
       </section>
       <div className="fixed bottom-0 left-0 w-full z-40">
-        <NavBottom ref={b_navRef} />
+        <NavBottom ref={bottomNavRef} />
       </div>
     </div>
   );

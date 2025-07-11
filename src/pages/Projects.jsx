@@ -1,33 +1,29 @@
 import { useState } from "react";
 
+// Icons
+import { IoMdArrowUp } from "react-icons/io";
+import { FaGithub } from "react-icons/fa";
+
 const dataSlider = [
   {
     id: 1,
-    title: "Title",
-    description: "Description",
-    image:
-      "https://plus.unsplash.com/premium_photo-1750355751988-ac2f0cbc335c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "Weather App – Application météo interactive",
+    description:
+      "Application météo responsive avec recherche par ville, développée avec React, API météo et Tailwind CSS. Interface fluide et effets visuels modernes.",
+    tech: "React, JavaScript, API OpenWeather, Tailwind CSS",
+    image: "/assets/project2.jpg",
+    url: "https://azeddinebd.github.io/weather_App/",
+    github: "https://github.com/AzeddineBd/weather_App",
   },
   {
     id: 2,
-    title: "Title2",
-    description: "Description",
-    image:
-      "https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/624f1135bd83b9172f33b35a_6234f3abe2198da0233edb3b_1-developer-webflow-template.png",
-  },
-  {
-    id: 3,
-    title: "Title3",
-    description: "Description",
-    image:
-      "https://wrapmarketusercontent.com/assets/items/thumb/39a174f5663946660cac4ad5976412f1cc5593e23ec06b7c65b05c97b15a4cc2.webp?v=1728672472",
-  },
-  {
-    id: 4,
-    title: "Title4",
-    description: "Description",
-    image:
-      "https://wrapmarketusercontent.com/assets/items/thumb/39a174f5663946660cac4ad5976412f1cc5593e23ec06b7c65b05c97b15a4cc2.webp?v=1728672472",
+    title: "E-Commerce – Mini site marchand moderne",
+    description:
+      "Mini site marchand avec affichage des produits, panier interactif et gestion d’état via React et Context API.",
+    tech: "React, JavaScript, Context API, CSS Modules",
+    image: "/assets/project1.png",
+    url: "https://glittery-pudding-cf66c5.netlify.app/",
+    github: "https://github.com/AzeddineBd/E-commerce",
   },
 ];
 
@@ -74,15 +70,32 @@ const Projects = () => {
               <img
                 src={data.image}
                 alt={data.title}
-                className="md:w-[40vw] md:h-[44vh] w-[82vw] h-[32vh] object-cover rounded-lg shadow-2xl hover:rotate-2 transform duration-300"
+                className="md:w-[40vw] md:h-[44vh] w-[82vw] h-[32vh] object-cover rounded-t-lg shadow-2xl transform duration-300"
               />
 
               {index === activeIndex && (
-                <div className="text-center mt-4 text-[var(--color-text)]">
-                  <h2 className="text-2xl font-bold">{data.title}</h2>
+                <div className="text-center bg-[var(--color-bg-seconde)] md:w-[40vw] w-[82vw] py-4 px-14 rounded-b-lg shadow-2xl text-[var(--color-text)]">
+                  <h2 className="text-2xl font-bold mb-4">{data.title}</h2>
                   <p className="text-[var(--color-subtext))">
                     {data.description}
                   </p>
+                  <p className="font-semibold my-4">{data.tech}</p>
+                  <div className="flex items-center justify-center gap-4">
+                    <a
+                      className="text-2xl flex items-center justify-center gap-2 hover:scale-108 transform duration-300"
+                      target="_blank"
+                      href={data.url}
+                    >
+                      Visit <IoMdArrowUp className="rotate-45" />
+                    </a>
+                    <a
+                      className="text-2xl flex items-center justify-center gap-2 hover:scale-108 transform duration-300"
+                      target="_blank"
+                      href={data.github}
+                    >
+                      Code <FaGithub />
+                    </a>
+                  </div>
                 </div>
               )}
             </div>
