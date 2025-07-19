@@ -25,6 +25,17 @@ const dataSlider = [
     url: "https://glittery-pudding-cf66c5.netlify.app/",
     github: "https://github.com/AzeddineBd/E-commerce",
   },
+
+  {
+    id: 2,
+    title: "Hero Section – Animation GSAP",
+    description:
+      "Hero section avec animation GSAP, intégration de texte et images, responsive design. Utilisation de GSAP pour des animations fluides et dynamiques.",
+    tech: "HTML, GSAP, JavaScript, CSS",
+    image: "/assets/project3.png",
+    url: "https://spiffy-monstera-1b693b.netlify.app/",
+    github: "https://github.com/AzeddineBd/heroSection",
+  },
 ];
 
 const Projects = () => {
